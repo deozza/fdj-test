@@ -2,21 +2,15 @@
 
 namespace App\Tests\Service\Euromillions\UseCase;
 
-use App\Service\Euromillions\Model\Result;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
-
-use App\Service\Euromillions\UseCase\UseCase;
 
 class UseCaseTest extends KernelTestCase
 {
-    public function testGetResult_checkReturnType()
-    {
-        $useCase = new UseCase();
+    public function queryResult_checkServiceIsCalled() {
 
-        $result = $useCase->getResult();
+    }
 
-        $expectedResultType = Result::class;
+    public function queryResult_checkResultIsReturned() {
 
-        $this->assertInstanceOf($expectedResultType, $result);
     }
 }
