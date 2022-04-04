@@ -70,5 +70,43 @@ img {
     width: 100%;
     height: auto;
 }
+
+@media only screen and (max-width: 1024px) {
+    main > div > div.logo{
+        width: 100%;
+    }
+
+    main > div > div.content {
+        width: 100%;
+        margin: 24px;
+
+    }
+
+    main > div > div.content > h1 {
+        font-size: 4.5rem;
+        line-height: 1;
+    }
+
+    main > div > div.content > h2 {
+       font-size: 3rem;
+       line-height: 1;
+    }
+
+    main > div > div.content > div.flex-row > div.flex-row {
+        width: 90%;
+        margin: 48px 0px;
+    } 
+
+    main > div > div.content > div.flex-row > div.flex-row > span{
+        font-size: 2.25rem;
+        line-height: 2.25rem;
+    } 
+
+    main > div > div.content > div.flex-row > p {
+        font-size: 2.25rem;
+        line-height: 2.25rem;
+    } 
+}
+
 </style>
 {% endblock %}
