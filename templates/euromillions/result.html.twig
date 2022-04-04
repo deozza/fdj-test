@@ -1,7 +1,74 @@
-<h1>Tirage du {{result.date | format_datetime(locale='fr', pattern="EEEE d MMMM YYYY") }}</h1>
+{% extends 'base.html.twig' %}
 
-{% for number in result.numbers %}
-<p>{{number.value}} {{number.type}}</p>
-{% endfor %}
+{% block body %}
+<main class="full-height">
+    <div class="flex-row flex-around">
+        <div class="logo">
+            <img src="{{asset('img/Euromillions-logo-png.png')}}" alt="Logo Euromillions">
+        </div>
+        <div class="content">
+            <h1>Tirage du {{result.date | format_datetime(locale='fr', pattern="EEEE d MMMM YYYY") }}</h1>
+            <h2>Résultats EuroMillions - My Million</h2>
+            <div class="flex-row flex-between">
+                <div class="flex-row flex-between">
+                    {% for number in result.numbers %}
+                        {% if number.type == 'number' %}
+                            <span class="fa-layers fa-fw">
+                                <i class="fa-solid fa-circle fa-2x" style="color:blue"></i>
+                                <span class="fa-layers-text fa-inverse" data-fa-transform="right-5" style="font-weight:900">{{number.value}}</span>
+                            </span>
+                        {% else %}
+                            <span class="fa-layers fa-fw">
+                                <i class="fa-solid fa-star fa-2x" style="color:orange"></i>
+                                <span class="fa-layers-text fa-inverse" data-fa-transform="right-7" style="font-weight:900">{{number.value}}</span>
+                            </span>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                <p class="million">My Million <span>{{result.myMillionId}}</span></p>
 
-<p>My Million {{result.myMillionId}}</p>
+            </div>
+        </div>
+    </div>
+</main>
+
+<style>
+
+main > div.flex-row {
+    width: 100%;
+}
+
+main > div > div.logo{
+    width: 12vw;
+}
+
+main > div > div.content {
+    width: 80vw;
+}
+
+main > div > div.content > div.flex-row {
+    width: 100%;
+}
+
+main > div > div.content > div.flex-row > div.flex-row {
+    width: 30%;
+} 
+
+main > div > div.content > div.flex-row > p {
+    padding: 12px;
+    border: 1px solid blue;
+    border-radius: 24px;
+    font-weight: bold;
+    color: blue;
+} 
+
+main > div > div.content > div.flex-row > p > span {
+    color: black;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+</style>
+{% endblock %}
