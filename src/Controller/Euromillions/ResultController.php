@@ -24,6 +24,8 @@ class ResultController extends AbstractController
     {
         $result = $this->euroMillionUseCase->getResult();
 
-        return $this->render('euromillions/result.html.twig', []);
+        return $this->render('euromillions/result.html.twig', [
+            'result' => $result
+        ]);
     }
 }

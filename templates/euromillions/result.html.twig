@@ -1,1 +1,7 @@
-<h1>Hello World</h1>
+<h1>Tirage du {{result.date | format_datetime(locale='fr', pattern="EEEE d MMMM YYYY") }}</h1>
+
+{% for number in result.numbers %}
+<p>{{number.value}} {{number.type}}</p>
+{% endfor %}
+
+<p>My Million {{result.myMillionId}}</p>
