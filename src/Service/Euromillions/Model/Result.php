@@ -3,16 +3,16 @@
 namespace App\Service\Euromillions\Model;
 
 class Result {
-    private string $date;
+    private \DateTime $date;
     private string $myMillionId;
     private array $numbers;
 
     public function setDate(string $date): self {
-        $this->date = $date;
+        $this->date = new \DateTime($date);
         return $this;
     }
 
-    public function getDate(): string|null {
+    public function getDate(): \DateTime|null {
         return $this->date;
     }
 
