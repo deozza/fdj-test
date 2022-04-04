@@ -1,0 +1,21 @@
+version: "3"
+services:
+  fdj-php:
+    container_name: fdj-php
+    build:
+      context: .
+      dockerfile: .docker/php/Dockerfile
+      args:
+       - GIT_USERNAME="deozza"
+       - GIT_EMAIL="deozza@gmail.com"
+    restart: unless-stopped
+    environment:
+      - PUID=1000
+      - GUID=1000
+      - TZ=Europe/Paris
+      - HOST=0.0.0.0
+    ports:
+      - '9001:9000'
+      - '8888:8000'
+    volumes:
+      - ./:/home/app:cached
