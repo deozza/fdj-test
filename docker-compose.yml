@@ -6,8 +6,8 @@ services:
       context: .
       dockerfile: .docker/php/Dockerfile
       args:
-       - GIT_USERNAME="deozza"
-       - GIT_EMAIL="deozza@gmail.com"
+       - GIT_USERNAME=""
+       - GIT_EMAIL=""
     restart: unless-stopped
     environment:
       - PUID=1000
