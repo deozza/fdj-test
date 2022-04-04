@@ -2,10 +2,9 @@
 
 namespace App\Tests\Service\Euromillions\Service;
 
-use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
+use PHPUnit\Framework\TestCase;
 
-
-class ServiceTest extends KernelTestCase
+class ServiceTest extends TestCase
 {
     public function queryResult_checkCorrectAdapterIsCalled() {
 

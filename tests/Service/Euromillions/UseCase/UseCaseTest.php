@@ -2,9 +2,9 @@
 
 namespace App\Tests\Service\Euromillions\UseCase;
 
-use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
+use PHPUnit\Framework\TestCase;
 
-class UseCaseTest extends KernelTestCase
+class UseCaseTest extends TestCase
 {
     public function queryResult_checkServiceIsCalled() {
 
